@@ -14,15 +14,22 @@ namespace Test.Calculadora
         }*/
 
         [Test]
-        public void TestAdition1()
+        public void TestAditionBasic()
         {
             IOperable service = createServiceProvider();
             double[] numbers= new double[2] {5,5};
             Assert.AreEqual(10, service.doAddition(numbers));
         }
+        [Test]
+        public void TestMonkeyAditionBasic()
+        {
+            IOperable service = createServiceProvider();
+            double[] numbers = new double[2] { 5, 5 };
+            Assert.AreNotEqual(11, service.doAddition(numbers));
+        }
 
         [Test]
-        public void TestAdition2()
+        public void TestAditionWithDecimals()
         {
             IOperable service = createServiceProvider();
             double[] numbers = new double[2] { 5.5, 10.23 };
@@ -57,7 +64,7 @@ namespace Test.Calculadora
         public void TestDivision1()
         {
             IOperable service = createServiceProvider();
-            double[] numbers = new double[2] { 10, 5 };
+            double[] numbers = new double[2] { 10, 5};
             Assert.AreEqual(2, service.doDivision(numbers));         
         }
 
@@ -81,7 +88,7 @@ namespace Test.Calculadora
             Assert.IsInstanceOf<IOperable>(serviceProvider);
             Assert.IsInstanceOf<RemoteOperationService>(serviceRemote);
         }
-
+        
         private IOperable createServiceProvider()
         {
             var CalculatorProvider = new ServiceCollection()

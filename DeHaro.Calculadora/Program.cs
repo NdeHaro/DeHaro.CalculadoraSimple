@@ -38,7 +38,7 @@ namespace DeHaro.Calculadora
                 switch (election)
                 {
                     case 0:
-                        Console.WriteLine("Something wrong, choose 1-4 option");
+                        Console.WriteLine("Something went wrong, choose 1-4 option");
                         break;
                     case 1:
                         numberList = askNumbers();
@@ -66,7 +66,7 @@ namespace DeHaro.Calculadora
                         Console.WriteLine($"Result: {service.doDivision(numberList)}");
                         break;
                     default:
-                        Console.WriteLine("Something wrong, choose 1-4 option");
+                        Console.WriteLine("Something went wrong, choose 1-4 option");
                         break;
                 }
             }
